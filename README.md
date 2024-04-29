@@ -38,15 +38,16 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
 
    - If your server is pointing directly to public folder, than just leave that field empty.
 
-### 4. Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_NAME` and `DB_PASSWORD` to match your host and database credentials.
+### 4. Database configuration:
+   - Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_NAME` and `DB_PASSWORD` to match your host and database credentials.
 
 ## Usage
 
-1. Define your routes in the app/config/routes.php file to map URLs to controller actions.
-2. Create controller classes in the app/controllers directory to handle specific actions and business logic.
-3. Define model classes in the app/models directory to interact with the database and manage application data.
-4. Create view files in the app/views directory to render HTML output for user interfaces.
-5. Customize the framework as needed for your specific project requirements.
+- Define your routes in the app/config/routes.php file to map URLs to controller actions.
+- Create controller classes in the app/controllers directory to handle specific actions and business logic.
+- Define model classes in the app/models directory to interact with the database and manage application data.
+- Create view files in the app/views directory to render HTML output for user interfaces.
+- Customize the framework as needed for your specific project requirements.
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
