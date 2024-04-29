@@ -24,10 +24,12 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
 
 3. index.php Configuration:
    - Open the `index.php` file located in the `public` directory.
-   - Set the value of `BaseURL` to match the directory specified in the `RewriteBase` directive of the `.htaccess` file. For example, if the `RewriteBase` directive is set to `/your-root-folder/`, set `BaseURL` as follows:
+   - Set the value of `BaseURL` to match the directory specified in the `RewriteBase` of the `.htaccess` file. For example, if the `RewriteBase` is set to `/your-root-folder/`, set `BaseURL` as follows:
+
      ```php
      define('BaseURL', 'your-root-folder');
      ```
+
    -If your server is pointing directly to public folder, than just leave that field empty.
 
 3. Rename the .env.example file to .env and update DB_HOST, DB_NAME and DB_PASSWORD to match your host and database credentials.
