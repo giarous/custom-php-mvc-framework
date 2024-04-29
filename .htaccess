@@ -1,0 +1,11 @@
+RewriteEngine On
+# Set the base directory for the rewrites to 'custom-php-mvc-framework'
+RewriteBase /custom-php-mvc-framework/
+
+# Redirect access from 'custom-php-mvc-framework' to 'custom-php-mvc-framework/public/index.php' without changing the URL
+RewriteRule ^$ public/index.php [L]
+
+# Redirect all non-direct file or directory accesses to 'public/index.php'
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
