@@ -39,7 +39,7 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
    - If your server is pointing directly to public folder, than just leave that field empty.
 
 ### 4. Database configuration:
-   - Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_NAME` and `DB_PASSWORD` to match your host and database credentials.
+   - Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_USER` and `DB_PASSWORD` to match your host and database credentials.
 
 ## Usage
 
