@@ -1,0 +1,51 @@
+# Dependency directories
+/vendor/
+
+# Compiled source
+*.suc
+*.phps
+
+# Various log files
+*.log
+*.sql
+*.sqlite
+
+# Cache files for templating engines
+*.tpl.php
+
+# Folders related to project configuration
+/node_modules/
+/.vagrant/
+/.idea/
+/.vscode/ # VSCode specific settings
+
+# Operating system generated files
+.DS_Store # macOS specific
+Thumbs.db # Windows specific
+desktop.ini # Windows specific
+
+# Environment files
+/.env
+*.env
+
+# Exported databases
+*.sql
+*.sql.gz
+*.sql.tar.gz
+
+# Composer files
+/composer.phar
+/composer.lock
+
+# User-specific files
+/.php_cs.cache
+/.php_cs.dist
+/.phpunit.result.cache
+
+# PHPStorm project files
+/.idea/
+
+# Other common directories to ignore
+/tmp
+/cache
+/log

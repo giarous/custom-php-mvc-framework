@@ -1,0 +1,37 @@
+/my-mvc-php-framework
+│
+├── /public
+│   ├── .htaccess
+│   ├── index.php
+│   └── /css
+│       └── styles.css
+│
+├── /app
+│   ├── /config
+│   │   ├── .env
+│   │   ├── Config.php
+│   │   ├── autoloader.php
+│   │   └── routes.php
+│   │
+│   ├── /controllers
+│   │   ├── PagesController.php
+│   │   └── UsersController.php
+│   │
+│   ├── /models
+│   │   ├── Database.php
+│   │   ├── User.php
+│   │   ├── UserDAO.php
+│   │   └── Router.php
+│   │
+│   ├── /views
+│   │   ├── PagesView.php
+│   │   ├── UsersView.php
+│   │   ├── ErrorView.php
+│   │   └── /partials
+│   │       ├── header.php
+│   │       └── footer.php
+|   |       └── nav.php
+│   │
+│   └── /core
+│       └── App.php
+│
