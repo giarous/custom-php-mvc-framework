@@ -22,9 +22,9 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
 2. .htaccess Configuration: 
 - Set the `RewriteBase` directive to the base directory of your project. For example, if the project is located at `your-root-folder`, your RewriteBase should be set to `RewriteBase /your-root-folder/`. 
 
-```php
+   ```php
      RewriteBase /your-root-folder/
-     ```
+   ```
 
 If your server is pointing directly to public folder, than just leave that field empty.
 
