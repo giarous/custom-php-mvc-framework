@@ -19,8 +19,18 @@ This is a lightweight PHP MVC (Model-View-Controller) framework designed to simp
    ```bash
    git clone https://github.com/giarous/custom-php-mvc-framework.git
 
-2. Configure your web server to point to the public directory as the document root.
-3. Rename the .env.example file to .env and update the database and base URL configurations as needed.
+2. **.htaccess Configuration**: 
+- Set the `RewriteBase` directive to the base directory of your project. For example, if your project is named `custom-php-mvc-framework`, the directive should be set to `RewriteBase /custom-php-mvc-framework/`.
+
+3. **index.php Configuration**:
+   - Open the `index.php` file located in the `public` directory.
+   - Locate the `BaseURL` constant definition.
+   - Set the value of `BaseURL` to match the directory specified in the `RewriteBase` directive of the `.htaccess` file. For example, if the `RewriteBase` directive is set to `/custom-php-mvc-framework/`, set `BaseURL` as follows:
+     ```php
+     define('BaseURL', 'custom-php-mvc-framework');
+     ```
+
+4. Rename the .env.example file to .env and update DB_HOST, DB_NAME and DB_PASSWORD to match your host and database credentials.
 
 ## Usage
 
