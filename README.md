@@ -20,13 +20,13 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
    git clone https://github.com/giarous/custom-php-mvc-framework.git
 
 2. .htaccess Configuration: 
-- Set the `RewriteBase` directive to the base directory of your project. For example, if the project is located at `your-root-folder`, your RewriteBase should be set to `RewriteBase /your-root-folder/`. 
+- Set the `RewriteBase` directive to the base directory of your project. For example, if the project is located at `your-root-folder`, your RewriteBase should be set to:
 
    ```php
      RewriteBase /your-root-folder/
    ```
 
-If your server is pointing directly to public folder, than just leave that field empty.
+- If your server is pointing directly to public folder, than just leave that field empty.
 
 3. index.php Configuration:
    - Open the `index.php` file located in the `public` directory.
@@ -36,7 +36,7 @@ If your server is pointing directly to public folder, than just leave that field
      define('BaseURL', 'your-root-folder');
      ```
 
-   -If your server is pointing directly to public folder, than just leave that field empty.
+   - If your server is pointing directly to public folder, than just leave that field empty.
 
 3. Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_NAME` and `DB_PASSWORD` to match your host and database credentials.
 
