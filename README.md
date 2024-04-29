@@ -1,6 +1,6 @@
 # PHP MVC Framework
 
-This is a lightweight PHP MVC (Model-View-Controller) framework designed to simplify web application development. It provides a structured approach to building web applications by separating concerns into distinct components: models for data handling, views for user interface presentation, and controllers for business logic and application flow.
+This is a custom PHP MVC (Model-View-Controller) framework designed to simplify web application development. It provides a structured approach to building web applications by separating concerns into distinct components: models for data handling, views for user interface presentation, and controllers for business logic and application flow.
 
 ## Features
 
@@ -19,18 +19,18 @@ This is a lightweight PHP MVC (Model-View-Controller) framework designed to simp
    ```bash
    git clone https://github.com/giarous/custom-php-mvc-framework.git
 
-2. **.htaccess Configuration**: 
-- Set the `RewriteBase` directive to the base directory of your project. For example, if your project is named `custom-php-mvc-framework`, the directive should be set to `RewriteBase /custom-php-mvc-framework/`.
+2. .htaccess Configuration: 
+- Set the `RewriteBase` directive to the base directory of your project. For example, if the project is located at `your-root-folder`, the directive should be set to `RewriteBase /your-root-folder/`. If your server is pointing directly to public folder, than just leave that field empty.
 
-3. **index.php Configuration**:
+3. index.php Configuration:
    - Open the `index.php` file located in the `public` directory.
-   - Locate the `BaseURL` constant definition.
-   - Set the value of `BaseURL` to match the directory specified in the `RewriteBase` directive of the `.htaccess` file. For example, if the `RewriteBase` directive is set to `/custom-php-mvc-framework/`, set `BaseURL` as follows:
+   - Set the value of `BaseURL` to match the directory specified in the `RewriteBase` directive of the `.htaccess` file. For example, if the `RewriteBase` directive is set to `/your-root-folder/`, set `BaseURL` as follows:
      ```php
-     define('BaseURL', 'custom-php-mvc-framework');
+     define('BaseURL', 'your-root-folder');
      ```
+   -If your server is pointing directly to public folder, than just leave that field empty.
 
-4. Rename the .env.example file to .env and update DB_HOST, DB_NAME and DB_PASSWORD to match your host and database credentials.
+3. Rename the .env.example file to .env and update DB_HOST, DB_NAME and DB_PASSWORD to match your host and database credentials.
 
 ## Usage
 
