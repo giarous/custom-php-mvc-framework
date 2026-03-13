@@ -1,4 +1,4 @@
-/my-mvc-php-framework
+/custom-mvc-php-framework
 │
 ├── /public
 │   ├── .htaccess

@@ -1,11 +1,13 @@
 RewriteEngine On
-# Set the base directory for the rewrites to 'custom-php-mvc-framework'
 RewriteBase /custom-php-mvc-framework/
 
-# Redirect access from 'custom-php-mvc-framework' to 'custom-php-mvc-framework/public/index.php' without changing the URL
+# Block direct access to the app folder
+RewriteRule ^app(/.*)?$ - [F,L]
+
+# Route root to public/index.php
 RewriteRule ^$ public/index.php [L]
 
-# Redirect all non-direct file or directory accesses to 'public/index.php'
+# Route everything else to public/index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ public/index.php [QSA,L]

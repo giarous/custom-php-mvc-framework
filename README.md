@@ -41,6 +41,38 @@ This is a custom PHP MVC (Model-View-Controller) framework designed to simplify 
 ### 4. Database configuration:
    - Rename the `.env.example` file to `.env` and update `DB_HOST`, `DB_USER` and `DB_PASSWORD` to match your host and database credentials.
 
+### 5. Apache security configuration (XAMPP / shared hosting):
+
+   Restrict direct access to the `app/` folder to prevent sensitive files (`.env`, configs, models) from being served to the browser.
+
+   **Option A — `httpd.conf` (recommended for XAMPP):**
+
+   Add this block to your Apache `httpd.conf` inside the XAMPP `apache/conf/` directory, directly after your project's existing `<Directory>` block:
+
+   ```apacheconf
+   <Directory "C:/xampp/htdocs/your-root-folder">
+       Options FollowSymLinks
+       AllowOverride All
+       Require all granted
+   </Directory>
+
+   <Directory "C:/xampp/htdocs/your-root-folder/app">
+       Require all denied
+   </Directory>
+   ```
+
+   > Note: Remove `Indexes` from the `Options` directive if it was previously set. `Indexes` enables directory listings, which exposes your folder structure publicly.
+
+   **Option B — `app/.htaccess` (for shared hosting without `httpd.conf` access):**
+
+   Create a file at `app/.htaccess` with the following content:
+
+   ```apacheconf
+   Require all denied
+   ```
+
+   Both options can be used together for defence in depth. Restart Apache after any changes to `httpd.conf`.
+
 ## Usage
 
 - Define your routes in the app/config/routes.php file to map URLs to controller actions.
