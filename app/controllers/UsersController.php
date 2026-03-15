@@ -28,7 +28,7 @@ class UsersController
      */
     public function __construct()
     {
-        $this->database = new Database();
+        $this->database = Database::getInstance();
         $this->userDAO = new UserDAO($this->database);
         $this->usersView = new UsersView();
         $this->errorView = new ErrorView();

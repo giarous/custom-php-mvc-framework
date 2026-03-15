@@ -14,6 +14,9 @@ use PDOException;
  */
 class Database
 {
+    private static $instance = null;
+    private $pdo;
+
     private $dbHost;
     private $dbName;
     private $dbUser;
@@ -25,13 +28,21 @@ class Database
      * 
      * Initializes the Database object with database configuration.
      */
-    public function __construct()
+    private function __construct()
     {
         $this->dbConfig = new Config();
         $this->dbHost = $this->dbConfig->dbHost;
         $this->dbName = $this->dbConfig->dbName;
         $this->dbUser = $this->dbConfig->dbUser;
         $this->dbPass = $this->dbConfig->dbPass;
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 
     /**
@@ -43,24 +54,22 @@ class Database
      */
     public function connect()
     {
-        try {
-            $pdo = new PDO("mysql:host=" . $this->dbHost . ";dbname=" . $this->dbName, $this->dbUser, $this->dbPass);
+        if ($this->pdo === null) {
+            try {
+                $this->pdo = new PDO("mysql:host=" . $this->dbHost . ";dbname=" . $this->dbName, $this->dbUser, $this->dbPass);
+                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            // Set PDO to throw exceptions on error
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Set default fetch mode to associative array
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-            return $pdo;
-        } catch (PDOException $e) {
-            // Log error to file or error monitoring system
-            error_log("Connection failed: " . $e->getMessage());
-
-            // Show a generic error message
-            throw new Exception("Unable to connect to the database. Please try again later.");
+            } catch (PDOException $e) {
+                error_log("Connection failed: " . $e->getMessage());
+                throw new Exception("Unable to connect to the database.");
+            }
         }
+        return $this->pdo;
     }
+
+    private function __clone() {}
+    public function __wakeup() { throw new Exception("Cannot unserialize singleton."); }
     
 }
 
